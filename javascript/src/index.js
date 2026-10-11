@@ -9,7 +9,7 @@ import {
 
 export class EbayClient extends CrawloraClient {
   constructor(options = {}) {
-    super({ ...options, userAgent: options.userAgent ?? "crawlora-ebay-js/0.1.0" });
+    super({ ...options, userAgent: options.userAgent ?? "crawlora-ebay-js/0.1.1" });
     this["item"] = (...args) => this.request("ebay-item", ...args);
     this["liveStreams"] = (...args) => this.request("ebay-live-streams", ...args);
     this["liveStreamsBatch"] = (...args) => this.request("ebay-live-streams-batch", ...args);
@@ -32,5 +32,5 @@ export {
   CrawloraServerError
 };
 export { groups, operations, operationCount, OperationIds } from "./operations.js";
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 export default EbayClient;

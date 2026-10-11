@@ -26,7 +26,7 @@ final class Client
     private ?\Closure $transport;
 
     public const PLATFORM = 'ebay';
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.1.1';
     public const OPERATION_COUNT = 10;
     public const OPERATION_IDS = ["ebay-item", "ebay-live-stream", "ebay-live-stream-items", "ebay-live-streams", "ebay-live-streams-batch", "ebay-search", "ebay-seller", "ebay-seller-about", "ebay-seller-feedback", "ebay-seller-shop"];
 
@@ -57,7 +57,7 @@ JSON, true, 512, JSON_THROW_ON_ERROR);
         $url = $this->buildUrl($operation, $params);
         $headers = [
             'x-api-key: ' . $this->apiKey,
-            'User-Agent: crawlora-ebay-php/0.1.0',
+            'User-Agent: crawlora-ebay-php/0.1.1',
             'Accept: ' . (in_array('text/plain', $operation['produces'], true) ? 'application/json, text/plain' : 'application/json'),
         ];
         if ($payload !== null) {
