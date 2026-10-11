@@ -1,10 +1,10 @@
 {
   "name": "@crawlora-org/ebay",
   "version": "0.1.1",
-  "description": "Typed JavaScript client for the Crawlora eBay API",
+  "description": "Crawlora eBay API client with 10 endpoints for listing search, item details, seller profiles, feedback and shops, and eBay Live streams",
   "homepage": "https://crawlora.net/?utm_source=npm&utm_medium=referral&utm_campaign=platform-clients&utm_content=ebay-javascript-homepage",
   "bugs": { "url": "https://github.com/Crawlora-org/crawlora-ebay/issues" },
-  "keywords": ["crawlora", "api-client", "web-scraping", "ebay", "typescript"],
+  "keywords": ["crawlora", "api-client", "web-scraping", "ebay", "listing-search", "item-details", "seller-profiles", "feedback-shops", "ebay-live-streams"],
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",

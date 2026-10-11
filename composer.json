@@ -1,6 +1,17 @@
 {
   "name": "crawlora/ebay",
-  "description": "eBay client for the Crawlora hosted API",
+  "description": "Crawlora eBay API client with 10 endpoints for listing search, item details, seller profiles, feedback and shops, and eBay Live streams",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "web-scraping",
+    "ebay",
+    "listing-search",
+    "item-details",
+    "seller-profiles",
+    "feedback-shops",
+    "ebay-live-streams"
+  ],
   "type": "library",
   "license": "MIT",
   "require": {
