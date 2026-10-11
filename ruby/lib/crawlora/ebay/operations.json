@@ -1,0 +1,414 @@
+{
+  "platform": "ebay",
+  "operationCount": 10,
+  "operationIds": [
+    "ebay-item",
+    "ebay-live-stream",
+    "ebay-live-stream-items",
+    "ebay-live-streams",
+    "ebay-live-streams-batch",
+    "ebay-search",
+    "ebay-seller",
+    "ebay-seller-about",
+    "ebay-seller-feedback",
+    "ebay-seller-shop"
+  ],
+  "methods": {
+    "item": "ebay-item",
+    "live_streams": "ebay-live-streams",
+    "live_streams_batch": "ebay-live-streams-batch",
+    "live_stream": "ebay-live-stream",
+    "live_stream_items": "ebay-live-stream-items",
+    "search": "ebay-search",
+    "seller": "ebay-seller",
+    "seller_about": "ebay-seller-about",
+    "seller_feedback": "ebay-seller-feedback",
+    "seller_shop": "ebay-seller-shop"
+  },
+  "operations": {
+    "ebay-item": {
+      "id": "ebay-item",
+      "method": "GET",
+      "path": "/ebay/item/{item_id}",
+      "pathParams": [
+        "item_id"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay item ID",
+          "in": "path",
+          "name": "item_id",
+          "required": true,
+          "type": "string",
+          "x-example": "196435705622"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-live-streams": {
+      "id": "ebay-live-streams",
+      "method": "GET",
+      "path": "/ebay/live/streams",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "category",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "explore",
+            "IPqZx79LNuwFcSVt",
+            "oHjQFTlZ5cYgWkjB",
+            "l68DJtBAVZge4x4n",
+            "2Nk3OYiOJHfXqpWG",
+            "5quuEnjO3axyz46U",
+            "nGpMTpm13Q86Eaoo",
+            "sYRxeaskGmNC6xaB",
+            "iYaYo88zN2vtQorh",
+            "GYAbsFw6onSNloAb",
+            "WJ9zLwYjK8njaBtN",
+            "rALkRyk8gXHzIBR6",
+            "DNta0sJ8Y6NXZsC9",
+            "GU4UfBzZSF4jiteS",
+            "IO7Oih07PtNJSWhU",
+            "cF4xtF8z9riubmLh",
+            "bywKDIdtxhi4hUSO"
+          ]
+        },
+        {
+          "name": "request_number",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "session_id",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay Live category channel, defaults to explore",
+          "enum": [
+            "explore",
+            "IPqZx79LNuwFcSVt",
+            "oHjQFTlZ5cYgWkjB",
+            "l68DJtBAVZge4x4n",
+            "2Nk3OYiOJHfXqpWG",
+            "5quuEnjO3axyz46U",
+            "nGpMTpm13Q86Eaoo",
+            "sYRxeaskGmNC6xaB",
+            "iYaYo88zN2vtQorh",
+            "GYAbsFw6onSNloAb",
+            "WJ9zLwYjK8njaBtN",
+            "rALkRyk8gXHzIBR6",
+            "DNta0sJ8Y6NXZsC9",
+            "GU4UfBzZSF4jiteS",
+            "IO7Oih07PtNJSWhU",
+            "cF4xtF8z9riubmLh",
+            "bywKDIdtxhi4hUSO"
+          ],
+          "in": "query",
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "description": "Pagination cursor from a previous response's next_request_number, defaults to 0",
+          "in": "query",
+          "name": "request_number",
+          "type": "integer"
+        },
+        {
+          "description": "Pagination session id from a previous response's session_id",
+          "in": "query",
+          "name": "session_id",
+          "type": "string"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-live-streams-batch": {
+      "id": "ebay-live-streams-batch",
+      "method": "GET",
+      "path": "/ebay/live/streams/batch",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "ids",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "One or more eBay Live stream/event ids, up to 9. Comma-separated or repeated query values are both accepted.",
+          "in": "query",
+          "name": "ids",
+          "required": true,
+          "type": "string",
+          "x-example": "FncRQ8VJGxKzLase"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-live-stream": {
+      "id": "ebay-live-stream",
+      "method": "GET",
+      "path": "/ebay/live/streams/{id}",
+      "pathParams": [
+        "id"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay Live stream/event id",
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "qrJnMkM8X2hJuIf3"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-live-stream-items": {
+      "id": "ebay-live-stream-items",
+      "method": "GET",
+      "path": "/ebay/live/streams/{id}/items",
+      "pathParams": [
+        "id"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay Live stream/event id",
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "qrJnMkM8X2hJuIf3"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-search": {
+      "id": "ebay-search",
+      "method": "POST",
+      "path": "/ebay/search",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": "option",
+      "bodyRequired": true,
+      "params": [
+        {
+          "description": "eBay search payload",
+          "in": "body",
+          "name": "option",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/ebay.SearchOption"
+          }
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-seller": {
+      "id": "ebay-seller",
+      "method": "GET",
+      "path": "/ebay/seller/{seller}",
+      "pathParams": [
+        "seller"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay seller username",
+          "in": "path",
+          "name": "seller",
+          "required": true,
+          "type": "string",
+          "x-example": "poloblade"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-seller-about": {
+      "id": "ebay-seller-about",
+      "method": "GET",
+      "path": "/ebay/seller/{seller}/about",
+      "pathParams": [
+        "seller"
+      ],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay seller username",
+          "in": "path",
+          "name": "seller",
+          "required": true,
+          "type": "string",
+          "x-example": "poloblade"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-seller-feedback": {
+      "id": "ebay-seller-feedback",
+      "method": "GET",
+      "path": "/ebay/seller/{seller}/feedback",
+      "pathParams": [
+        "seller"
+      ],
+      "queryParams": [
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "type": "integer",
+          "enum": [
+            "24",
+            "48",
+            "72"
+          ]
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay seller username",
+          "in": "path",
+          "name": "seller",
+          "required": true,
+          "type": "string",
+          "x-example": "poloblade"
+        },
+        {
+          "default": 1,
+          "description": "Feedback page number",
+          "in": "query",
+          "name": "page",
+          "type": "integer"
+        },
+        {
+          "default": 48,
+          "description": "Reviews per page",
+          "enum": [
+            24,
+            48,
+            72
+          ],
+          "in": "query",
+          "name": "per_page",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "ebay-seller-shop": {
+      "id": "ebay-seller-shop",
+      "method": "GET",
+      "path": "/ebay/seller/{seller}/shop",
+      "pathParams": [
+        "seller"
+      ],
+      "queryParams": [
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "eBay seller username",
+          "in": "path",
+          "name": "seller",
+          "required": true,
+          "type": "string",
+          "x-example": "poloblade"
+        },
+        {
+          "default": 1,
+          "description": "Shop page number",
+          "in": "query",
+          "name": "page",
+          "type": "integer"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}

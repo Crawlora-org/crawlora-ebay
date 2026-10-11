@@ -1,0 +1,23 @@
+{
+  "async_class_name": "AsyncEbayClient",
+  "class_name": "EbayClient",
+  "contract_revision": "sha256:e8514c916185f6508e01cf9bf5e07d3d39d49886c8da797ec56300d167e65268",
+  "display_name": "eBay",
+  "general_sdk_version": "1.46.0-sdk.1",
+  "golang_module_name": "github.com/Crawlora-org/crawlora-ebay",
+  "golang_version": "0.1.0",
+  "group_name": "ebay",
+  "java_description": "Java client for Crawlora's hosted eBay API, with listing search, item details, seller profiles, feedback and shops, and eBay Live streams. Requires a Crawlora API key.",
+  "maven_artifact_id": "crawlora-ebay",
+  "maven_group_id": "net.crawlora",
+  "module_name": "crawlora_ebay",
+  "npm_name": "@crawlora-org/ebay",
+  "php_package_name": "crawlora/ebay",
+  "php_repository": "https://github.com/Crawlora-org/crawlora-ebay",
+  "platform": "ebay",
+  "python_name": "crawlora-ebay",
+  "repository": "https://github.com/Crawlora-org/crawlora-ebay",
+  "ruby_gem_name": "crawlora-ebay",
+  "source_contract_sha256": "8f37412b34b49c443ff8c115dadaf9b6a2a82fd767af53137ce5e9f6b288ea20",
+  "version": "0.1.0"
+}

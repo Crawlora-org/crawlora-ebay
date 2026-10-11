@@ -1,0 +1,1819 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.Item": {
+      "properties": {
+        "availability": {
+          "example": "In Stock",
+          "type": "string"
+        },
+        "condition": {
+          "example": "Pre-Owned",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "item_feedback_count": {
+          "example": 80,
+          "type": "integer"
+        },
+        "item_id": {
+          "example": "196435705622",
+          "type": "string"
+        },
+        "item_specifics": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "link": {
+          "example": "https://www.ebay.com/itm/196435705622",
+          "type": "string"
+        },
+        "location": {
+          "example": "Canada",
+          "type": "string"
+        },
+        "price": {
+          "example": 49.95,
+          "type": "number"
+        },
+        "price_text": {
+          "example": "US $49.95",
+          "type": "string"
+        },
+        "rating": {
+          "example": 4.8,
+          "type": "number"
+        },
+        "rating_count": {
+          "example": 12,
+          "type": "integer"
+        },
+        "sale_status": {
+          "example": "Available",
+          "type": "string"
+        },
+        "seller_categories": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "seller_description": {
+          "type": "string"
+        },
+        "seller_detailed_ratings": {
+          "additionalProperties": {
+            "format": "float64",
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "seller_feedback_score": {
+          "example": 2067,
+          "type": "integer"
+        },
+        "seller_followers": {
+          "example": 13000,
+          "type": "integer"
+        },
+        "seller_items_sold": {
+          "example": 814000,
+          "type": "integer"
+        },
+        "seller_link": {
+          "example": "https://www.ebay.com/usr/soonerfan1949",
+          "type": "string"
+        },
+        "seller_logo_url": {
+          "example": "https://i.ebayimg.com/images/g/4yUAAOSwsV9ns4CY/s-l140.jpg",
+          "type": "string"
+        },
+        "seller_member_since": {
+          "example": "Mar 1998",
+          "type": "string"
+        },
+        "seller_name": {
+          "example": "soonerfan1949",
+          "type": "string"
+        },
+        "seller_positive_feedback": {
+          "example": 100,
+          "type": "number"
+        },
+        "seller_store_name": {
+          "example": "POLOBLADE COLLECTIBLES",
+          "type": "string"
+        },
+        "seller_total_feedback_count": {
+          "example": 291075,
+          "type": "integer"
+        },
+        "shipping": {
+          "example": "+$4.95 shipping",
+          "type": "string"
+        },
+        "title": {
+          "example": "1983 TOPPS BASEBALL - 1952 TOPPS REPRINTS #311 MICKEY MANTLE",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStream": {
+      "properties": {
+        "channels": {
+          "example": [
+            "SHOPLIVE"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "description": {
+          "example": "Brand NEW & Open Box Milwaukee tools, batteries, and bundles!",
+          "type": "string"
+        },
+        "end_time": {
+          "type": "string"
+        },
+        "hosts": {
+          "items": {
+            "$ref": "#/definitions/ebay.LiveStreamHost"
+          },
+          "type": "array"
+        },
+        "id": {
+          "example": "qrJnMkM8X2hJuIf3",
+          "type": "string"
+        },
+        "is_case_break": {
+          "type": "boolean"
+        },
+        "is_user_registered": {
+          "type": "boolean"
+        },
+        "like_count": {
+          "type": "integer"
+        },
+        "live_stream_url": {
+          "example": "https://live.us.shoplive.cloud/live/45-5WhDlPhrTUvioiwUb-ue2.m3u8",
+          "type": "string"
+        },
+        "preview_image_url": {
+          "example": "https://i.ebayimg.com/00/s/MTE4M1g3ODc=/z/840AAeSwE55qZjQL/$_45.JPG",
+          "type": "string"
+        },
+        "preview_stream_url": {
+          "type": "string"
+        },
+        "start_time": {
+          "example": "2026-08-09T17:01:30Z",
+          "type": "string"
+        },
+        "state": {
+          "example": "LIVE",
+          "type": "string"
+        },
+        "tags": {
+          "example": [
+            "Outdoor",
+            "Tools"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "example": "Jules' Tools - Milwaukee, DeWALT, Ryobi Power TOOLS!!!",
+          "type": "string"
+        },
+        "watched_count": {
+          "example": 196,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamDetail": {
+      "properties": {
+        "channels": {
+          "example": [
+            "SHOPLIVE"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "concurrent_viewer_count": {
+          "description": "ConcurrentViewerCount is the live viewer count at the time of the\nrequest. Zero for streams that are not currently LIVE.",
+          "example": 42,
+          "type": "integer"
+        },
+        "description": {
+          "example": "Brand NEW & Open Box Milwaukee tools, batteries, and bundles!",
+          "type": "string"
+        },
+        "end_time": {
+          "type": "string"
+        },
+        "hosts": {
+          "items": {
+            "$ref": "#/definitions/ebay.LiveStreamHost"
+          },
+          "type": "array"
+        },
+        "id": {
+          "example": "qrJnMkM8X2hJuIf3",
+          "type": "string"
+        },
+        "is_case_break": {
+          "type": "boolean"
+        },
+        "is_user_registered": {
+          "type": "boolean"
+        },
+        "like_count": {
+          "type": "integer"
+        },
+        "live_stream_url": {
+          "example": "https://live.us.shoplive.cloud/live/45-5WhDlPhrTUvioiwUb-ue2.m3u8",
+          "type": "string"
+        },
+        "preview_image_url": {
+          "example": "https://i.ebayimg.com/00/s/MTE4M1g3ODc=/z/840AAeSwE55qZjQL/$_45.JPG",
+          "type": "string"
+        },
+        "preview_stream_url": {
+          "type": "string"
+        },
+        "replay_url": {
+          "type": "string"
+        },
+        "site_id": {
+          "example": "0",
+          "type": "string"
+        },
+        "start_time": {
+          "example": "2026-08-09T17:01:30Z",
+          "type": "string"
+        },
+        "state": {
+          "example": "LIVE",
+          "type": "string"
+        },
+        "tags": {
+          "example": [
+            "Outdoor",
+            "Tools"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "example": "Jules' Tools - Milwaukee, DeWALT, Ryobi Power TOOLS!!!",
+          "type": "string"
+        },
+        "vendor_event_id": {
+          "type": "string"
+        },
+        "watched_count": {
+          "example": 196,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamHost": {
+      "properties": {
+        "communication_rating": {
+          "example": 4.99,
+          "type": "number"
+        },
+        "feedback_negative_count": {
+          "example": 18,
+          "type": "integer"
+        },
+        "feedback_neutral_count": {
+          "example": 15,
+          "type": "integer"
+        },
+        "feedback_positive_count": {
+          "description": "Feedback* / *Rating fields are only populated by Service.GetLiveStream\n(single-stream detail); Service.ListLiveStreams' hub feed does not\nrequest this data, so these are zero/omitted there. All scores are\nscoped to the seller's last 365 days of feedback.",
+          "example": 17315,
+          "type": "integer"
+        },
+        "feedback_positive_percent": {
+          "example": 99.9,
+          "type": "number"
+        },
+        "id": {
+          "example": "I92-9JgyS0C",
+          "type": "string"
+        },
+        "item_as_described_rating": {
+          "example": 4.95,
+          "type": "number"
+        },
+        "profile_picture_url": {
+          "example": "https://i.ebayimg.com/images/g/jGoAAOSwgLdn-B-P/s-l140.webp",
+          "type": "string"
+        },
+        "shipping_cost_rating": {
+          "example": 4.97,
+          "type": "number"
+        },
+        "shipping_time_rating": {
+          "example": 4.99,
+          "type": "number"
+        },
+        "store_name": {
+          "example": "Jules Tools",
+          "type": "string"
+        },
+        "username": {
+          "example": "julestools",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamItem": {
+      "properties": {
+        "auction_currency": {
+          "type": "string"
+        },
+        "auction_ending_at": {
+          "type": "string"
+        },
+        "auction_price": {
+          "type": "number"
+        },
+        "auction_status": {
+          "description": "Auction* fields reflect the live bidding state and are only meaningful\nfor saleType Auction. AuctionStatus is one of READY (queued, not yet\nstarted), LIVE (actively taking bids), or ENDED.",
+          "example": "READY",
+          "type": "string"
+        },
+        "bid_count": {
+          "example": 22,
+          "type": "integer"
+        },
+        "currency": {
+          "example": "USD",
+          "type": "string"
+        },
+        "end_date": {
+          "example": "2026-08-09T17:05:26Z",
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "is_exclusive": {
+          "description": "IsExclusive/Purchasable reflect eBay Live's own commerce-signal flags\nfor this listing (e.g. whether it can be bought outright vs. only won\nvia the live auction).",
+          "type": "boolean"
+        },
+        "is_visible": {
+          "type": "boolean"
+        },
+        "leader_username": {
+          "type": "string"
+        },
+        "listing_id": {
+          "example": "188766881103",
+          "type": "string"
+        },
+        "pin": {
+          "type": "boolean"
+        },
+        "price": {
+          "example": 1,
+          "type": "number"
+        },
+        "purchasable": {
+          "type": "boolean"
+        },
+        "sale_type": {
+          "example": "Auction",
+          "type": "string"
+        },
+        "status": {
+          "example": "ACTIVE",
+          "type": "string"
+        },
+        "title": {
+          "example": "#001 - Tool ONLY - Unless Specified! - Watch Auction",
+          "type": "string"
+        },
+        "winner_username": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamItemsResp": {
+      "properties": {
+        "event_id": {
+          "example": "qrJnMkM8X2hJuIf3",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/ebay.LiveStreamItem"
+          },
+          "type": "array"
+        },
+        "next_cursor": {
+          "description": "NextCursor is upstream's own pagination cursor for this listing set.\nCursor-based continuation is not yet exposed as a caller-facing input;\nthis field is surfaced for forward compatibility and informational use.",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamsBatchResp": {
+      "properties": {
+        "streams": {
+          "description": "Streams preserves the order returned by upstream, which is not\nguaranteed to match the requested id order. An id that does not\nresolve to a real event is silently omitted -- confirmed live that\nupstream returns 200 with a shorter events array rather than an error\nfor unknown ids, matching the plural-lookup semantics of a batch\nendpoint rather than the single-id GetLiveStream's typed 404.",
+          "items": {
+            "$ref": "#/definitions/ebay.LiveStream"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.LiveStreamsResp": {
+      "properties": {
+        "category": {
+          "example": "explore",
+          "type": "string"
+        },
+        "next_request_number": {
+          "description": "NextRequestNumber and SessionID feed back into a follow-up call's\nrequest_number/session_id to fetch the next page.",
+          "example": 1,
+          "type": "integer"
+        },
+        "session_id": {
+          "example": "12de43d1-1ab2-427b-a447-660797b06a88",
+          "type": "string"
+        },
+        "streams": {
+          "items": {
+            "$ref": "#/definitions/ebay.LiveStream"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SearchItem": {
+      "properties": {
+        "bid_count": {
+          "example": 9,
+          "type": "integer"
+        },
+        "caption": {
+          "example": "caption",
+          "type": "string"
+        },
+        "image": {
+          "example": "https://i.ebayimg.com/images/g/b6wAAOSwLRdmZeHS/s-l500.jpg",
+          "type": "string"
+        },
+        "is_authenticity_guaranteed": {
+          "example": false,
+          "type": "boolean"
+        },
+        "item_id": {
+          "example": "196435705622",
+          "type": "string"
+        },
+        "link": {
+          "example": "https://www.ebay.com/itm/196435705622",
+          "type": "string"
+        },
+        "location": {
+          "example": "Canada",
+          "type": "string"
+        },
+        "logistic": {
+          "example": "+$4.95 shipping",
+          "type": "string"
+        },
+        "offer_note": {
+          "example": "Buy It Now",
+          "type": "string"
+        },
+        "price": {
+          "example": 49.95,
+          "type": "number"
+        },
+        "price_from": {
+          "description": "$10 to $20",
+          "example": 10,
+          "type": "number"
+        },
+        "price_to": {
+          "example": 20,
+          "type": "number"
+        },
+        "rating": {
+          "example": 5,
+          "type": "number"
+        },
+        "rating_num": {
+          "example": 1,
+          "type": "integer"
+        },
+        "seller": {
+          "example": "soonerfan1949 (998) 100%",
+          "type": "string"
+        },
+        "sold_count": {
+          "example": 178,
+          "type": "integer"
+        },
+        "sub_title": {
+          "example": "Pre-Owned",
+          "type": "string"
+        },
+        "title": {
+          "example": "1983 TOPPS BASEBALL - 1952 TOPPS REPRINTS #311 MICKEY MANTLE",
+          "type": "string"
+        },
+        "watcher_count": {
+          "example": 26,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SearchOption": {
+      "properties": {
+        "keyword": {
+          "description": "keyword to search on Ebay",
+          "example": "1952 topps baseball mickey mantle #311",
+          "type": "string"
+        },
+        "limit": {
+          "description": "Number of items per page",
+          "enum": [
+            60,
+            120,
+            240
+          ],
+          "example": 60,
+          "type": "integer"
+        },
+        "listing_type": {
+          "description": "Listing type to search",
+          "enum": [
+            "active",
+            "sold",
+            "completed",
+            "sold_completed"
+          ],
+          "example": "active",
+          "type": "string"
+        },
+        "page": {
+          "description": "Page number",
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "keyword"
+      ],
+      "type": "object"
+    },
+    "ebay.SearchResp": {
+      "properties": {
+        "has_more": {
+          "example": true,
+          "type": "boolean"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "result": {
+          "items": {
+            "$ref": "#/definitions/ebay.SearchItem"
+          },
+          "type": "array"
+        },
+        "total": {
+          "example": 120,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.Seller": {
+      "properties": {
+        "description": {
+          "example": "Vintage sports card seller",
+          "type": "string"
+        },
+        "detailed_seller_ratings": {
+          "additionalProperties": {
+            "format": "float64",
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "display_name": {
+          "example": "soonerfan1949",
+          "type": "string"
+        },
+        "feedback_count": {
+          "example": 2067,
+          "type": "integer"
+        },
+        "feedback_summary": {
+          "additionalProperties": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "followers": {
+          "example": 52,
+          "type": "integer"
+        },
+        "items_sold": {
+          "example": 970,
+          "type": "integer"
+        },
+        "location": {
+          "example": "United States",
+          "type": "string"
+        },
+        "member_since": {
+          "example": "Jan 09, 2000",
+          "type": "string"
+        },
+        "positive_feedback_percent": {
+          "example": 100,
+          "type": "number"
+        },
+        "profile_url": {
+          "example": "https://www.ebay.com/usr/soonerfan1949",
+          "type": "string"
+        },
+        "seller": {
+          "example": "soonerfan1949",
+          "type": "string"
+        },
+        "store_name": {
+          "example": "Sooner Fan Cards",
+          "type": "string"
+        },
+        "store_url": {
+          "example": "https://www.ebay.com/str/example",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SellerAbout": {
+      "properties": {
+        "banner_url": {
+          "example": "https://i.ebayimg.com/images/g/2lEAAOSwR4Bjr23U/s-l1600.png",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/ebay.SellerAboutCategory"
+          },
+          "type": "array"
+        },
+        "contact_seller_url": {
+          "example": "https://contact.ebay.com/ws/eBayISAPI.dll?ShowSellerFAQ&iid=-1&requested=poloblade",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "followers": {
+          "example": 13000,
+          "type": "integer"
+        },
+        "items_sold": {
+          "example": 814000,
+          "type": "integer"
+        },
+        "location": {
+          "example": "United States",
+          "type": "string"
+        },
+        "logo_url": {
+          "example": "https://i.ebayimg.com/images/g/4yUAAOSwsV9ns4CY/s-l140.jpg",
+          "type": "string"
+        },
+        "member_since": {
+          "example": "Jan 09, 2000",
+          "type": "string"
+        },
+        "positive_feedback_percent": {
+          "example": 99.9,
+          "type": "number"
+        },
+        "seller": {
+          "example": "poloblade",
+          "type": "string"
+        },
+        "store_name": {
+          "example": "POLOBLADE COLLECTIBLES",
+          "type": "string"
+        },
+        "store_url": {
+          "example": "https://www.ebay.com/str/poloblade",
+          "type": "string"
+        },
+        "top_rated_seller": {
+          "example": true,
+          "type": "boolean"
+        },
+        "top_rated_seller_summary": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SellerAboutCategory": {
+      "properties": {
+        "name": {
+          "example": "Coins & Paper Money",
+          "type": "string"
+        },
+        "subcategories": {
+          "items": {
+            "$ref": "#/definitions/ebay.SellerAboutSubcategory"
+          },
+          "type": "array"
+        },
+        "url": {
+          "example": "https://www.ebay.com/str/poloblade/Coins-Paper-Money/_i.html?_sacat=11116",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SellerAboutSubcategory": {
+      "properties": {
+        "name": {
+          "example": "Coins: US",
+          "type": "string"
+        },
+        "url": {
+          "example": "https://www.ebay.com/str/poloblade/Coins-US/_i.html?_sacat=253",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SellerFeedback": {
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "detailed_seller_ratings": {
+          "additionalProperties": {
+            "format": "float64",
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "followers": {
+          "example": 13000,
+          "type": "integer"
+        },
+        "has_more": {
+          "example": true,
+          "type": "boolean"
+        },
+        "items_sold": {
+          "example": 814000,
+          "type": "integer"
+        },
+        "next_page": {
+          "example": 2,
+          "type": "integer"
+        },
+        "overall_rating_summary": {
+          "additionalProperties": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "page": {
+          "example": 1,
+          "type": "integer"
+        },
+        "per_page": {
+          "example": 48,
+          "type": "integer"
+        },
+        "positive_feedback_percent": {
+          "example": 99.9,
+          "type": "number"
+        },
+        "reviews": {
+          "items": {
+            "$ref": "#/definitions/ebay.SellerReview"
+          },
+          "type": "array"
+        },
+        "seller": {
+          "example": "poloblade",
+          "type": "string"
+        },
+        "store_name": {
+          "example": "POLOBLADE COLLECTIBLES",
+          "type": "string"
+        },
+        "store_url": {
+          "example": "https://www.ebay.com/str/poloblade",
+          "type": "string"
+        },
+        "total_feedback_count": {
+          "example": 291071,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.SellerReview": {
+      "properties": {
+        "buyer": {
+          "example": "w***n",
+          "type": "string"
+        },
+        "buyer_feedback": {
+          "example": 3426,
+          "type": "integer"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "period": {
+          "example": "Past 6 months",
+          "type": "string"
+        },
+        "rating": {
+          "example": "positive",
+          "type": "string"
+        },
+        "verified_purchase": {
+          "example": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ebay.itemResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.Item"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.liveStreamItemsResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.LiveStreamItemsResp"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.liveStreamResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.LiveStreamDetail"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.liveStreamsBatchResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.LiveStreamsBatchResp"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.liveStreamsResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.LiveStreamsResp"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.searchResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.SearchResp"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.sellerAboutResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.SellerAbout"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.sellerFeedbackResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.SellerFeedback"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.sellerResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.Seller"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "ebay.sellerShopResponseDoc": {
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "$ref": "#/definitions/ebay.SearchResp"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/ebay/item/{item_id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized details for a public eBay item listing.",
+        "operationId": "ebay-item",
+        "parameters": [
+          {
+            "description": "eBay item ID",
+            "in": "path",
+            "name": "item_id",
+            "required": true,
+            "type": "string",
+            "x-example": "196435705622"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.itemResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get eBay item details",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/live/streams": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns currently live and upcoming eBay Live streams for a category channel.",
+        "operationId": "ebay-live-streams",
+        "parameters": [
+          {
+            "description": "eBay Live category channel, defaults to explore",
+            "enum": [
+              "explore",
+              "IPqZx79LNuwFcSVt",
+              "oHjQFTlZ5cYgWkjB",
+              "l68DJtBAVZge4x4n",
+              "2Nk3OYiOJHfXqpWG",
+              "5quuEnjO3axyz46U",
+              "nGpMTpm13Q86Eaoo",
+              "sYRxeaskGmNC6xaB",
+              "iYaYo88zN2vtQorh",
+              "GYAbsFw6onSNloAb",
+              "WJ9zLwYjK8njaBtN",
+              "rALkRyk8gXHzIBR6",
+              "DNta0sJ8Y6NXZsC9",
+              "GU4UfBzZSF4jiteS",
+              "IO7Oih07PtNJSWhU",
+              "cF4xtF8z9riubmLh",
+              "bywKDIdtxhi4hUSO"
+            ],
+            "in": "query",
+            "name": "category",
+            "type": "string"
+          },
+          {
+            "description": "Pagination cursor from a previous response's next_request_number, defaults to 0",
+            "in": "query",
+            "name": "request_number",
+            "type": "integer"
+          },
+          {
+            "description": "Pagination session id from a previous response's session_id",
+            "in": "query",
+            "name": "session_id",
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.liveStreamsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "List eBay Live streams",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/live/streams/batch": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized summaries for multiple eBay Live streams/events in one call, up to 9 ids per request.",
+        "operationId": "ebay-live-streams-batch",
+        "parameters": [
+          {
+            "description": "One or more eBay Live stream/event ids, up to 9. Comma-separated or repeated query values are both accepted.",
+            "in": "query",
+            "name": "ids",
+            "required": true,
+            "type": "string",
+            "x-example": "FncRQ8VJGxKzLase"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.liveStreamsBatchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get multiple eBay Live streams",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/live/streams/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized detail for a single eBay Live stream/event, including each host's feedback summary for the last 365 days.",
+        "operationId": "ebay-live-stream",
+        "parameters": [
+          {
+            "description": "eBay Live stream/event id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "qrJnMkM8X2hJuIf3"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.liveStreamResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get an eBay Live stream",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/live/streams/{id}/items": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the currently featured/auction items for an eBay Live stream, including live bidding state.",
+        "operationId": "ebay-live-stream-items",
+        "parameters": [
+          {
+            "description": "eBay Live stream/event id",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "qrJnMkM8X2hJuIf3"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.liveStreamItemsResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "List an eBay Live stream's featured items",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/search": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized eBay search results.",
+        "operationId": "ebay-search",
+        "parameters": [
+          {
+            "description": "eBay search payload",
+            "in": "body",
+            "name": "option",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ebay.SearchOption"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.searchResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Search eBay listings",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/seller/{seller}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized details for a public eBay seller profile.",
+        "operationId": "ebay-seller",
+        "parameters": [
+          {
+            "description": "eBay seller username",
+            "in": "path",
+            "name": "seller",
+            "required": true,
+            "type": "string",
+            "x-example": "poloblade"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.sellerResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get eBay seller profile",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/seller/{seller}/about": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized seller about information from the public eBay store about tab, including seller stats, top-rated status, optional location/member-since fields, and cleaned store categories.",
+        "operationId": "ebay-seller-about",
+        "parameters": [
+          {
+            "description": "eBay seller username",
+            "in": "path",
+            "name": "seller",
+            "required": true,
+            "type": "string",
+            "x-example": "poloblade"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.sellerAboutResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get eBay seller about details",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/seller/{seller}/feedback": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized seller feedback summary, detailed ratings, and recent review cards from the public eBay seller feedback tab.",
+        "operationId": "ebay-seller-feedback",
+        "parameters": [
+          {
+            "description": "eBay seller username",
+            "in": "path",
+            "name": "seller",
+            "required": true,
+            "type": "string",
+            "x-example": "poloblade"
+          },
+          {
+            "default": 1,
+            "description": "Feedback page number",
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          },
+          {
+            "default": 48,
+            "description": "Reviews per page",
+            "enum": [
+              24,
+              48,
+              72
+            ],
+            "in": "query",
+            "name": "per_page",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.sellerFeedbackResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get eBay seller feedback",
+        "tags": [
+          "ebay"
+        ]
+      }
+    },
+    "/ebay/seller/{seller}/shop": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns normalized listings from the public eBay seller shop tab, with pagination backed by the store odtRefresh response.",
+        "operationId": "ebay-seller-shop",
+        "parameters": [
+          {
+            "description": "eBay seller username",
+            "in": "path",
+            "name": "seller",
+            "required": true,
+            "type": "string",
+            "x-example": "poloblade"
+          },
+          {
+            "default": 1,
+            "description": "Shop page number",
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ebay.sellerShopResponseDoc"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Get eBay seller shop listings",
+        "tags": [
+          "ebay"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "ebay"
+    }
+  ]
+}
