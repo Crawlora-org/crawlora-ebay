@@ -3,8 +3,8 @@ require_relative "lib/crawlora/ebay/version"
 Gem::Specification.new do |spec|
   spec.name = "crawlora-ebay"
   spec.version = Crawlora::Ebay::VERSION
-  spec.summary = "eBay client for the Crawlora hosted API"
-  spec.description = "Credential-free eBay API access through Crawlora's hosted service."
+  spec.summary = "eBay API client for Crawlora (10 endpoints)"
+  spec.description = "Ruby client for Crawlora's hosted eBay API. Covers listing search, item details, seller profiles, feedback and shops, and eBay Live streams across 10 endpoints."
   spec.authors = ["Crawlora"]
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6"

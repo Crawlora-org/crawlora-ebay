@@ -1,4 +1,4 @@
-// Package ebay is a focused Go client for Crawlora's eBay endpoints.
+// Package ebay is Crawlora's eBay API client for 10 endpoints, covering listing search, item details, seller profiles, feedback and shops, and eBay Live streams.
 // API documentation: https://crawlora.net/docs?utm_source=pkg.go.dev&utm_medium=referral&utm_campaign=platform-clients&utm_content=ebay-go-api-docs
 package ebay
 
