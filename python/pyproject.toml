@@ -7,7 +7,7 @@ name = "crawlora-ebay"
 version = "0.1.1"
 description = "Crawlora eBay API client with 10 endpoints for listing search, item details, seller profiles, feedback and shops, and eBay Live streams"
 readme = "README.md"
-keywords = ["crawlora", "api-client", "web-scraping", "ebay", "listing-search", "item-details", "seller-profiles", "feedback-shops", "ebay-live-streams"]
+keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "ebay", "ebay-api", "ebay-scraper", "ebay-data", "ebay-listing-search", "ebay-item-details", "ebay-seller-profiles", "ebay-feedback-shops", "ebay-live-streams"]
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
