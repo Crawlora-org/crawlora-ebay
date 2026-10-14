@@ -2,7 +2,7 @@
 
 This reference lists all 10 public eBay API endpoints exposed by the `@crawlora-org/ebay` and `crawlora-ebay` packages, covering listing search, item details, seller profiles, feedback and shops, and eBay Live streams. The clients call Crawlora's hosted API. Set `CRAWLORA_API_KEY` to a key for your Crawlora account before making requests. Service usage is billed under that account. These clients do not run a browser or scrape eBay locally; Crawlora is independent from and not endorsed by eBay or its owners.
 
-The package tracks the public API contract revision `sha256:e8514c916185f6508e01cf9bf5e07d3d39d49886c8da797ec56300d167e65268` bundled with release `0.1.1`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
+The package tracks the public API contract revision `sha256:50b2e34ad52f6fe505511c8f638f9d59682bc7dc9e4cf474f44b17feb2a6aaae` bundled with release `0.1.2`. Maintainers can preview daily contract updates with the repository's `Sync live API contract` workflow; unchanged contracts do not produce package releases.
 
 Both packages expose all 10 operations in the bundled API contract. JavaScript uses camelCase methods and Python uses snake_case methods. Methods also remain available through the `ebay` group and the generated `Client` alias.
 

@@ -8,7 +8,7 @@ Official Crawlora client packages for the hosted eBay API. Access 10 API endpoin
 - Python: [`crawlora-ebay`](python/README.md)
 - Go: [`github.com/Crawlora-org/crawlora-ebay`](go.mod)
 - Ruby: [`crawlora-ebay`](ruby/README.md)
-- Java: [`net.crawlora:crawlora-ebay:0.1.1`](java/README.md)
+- Java: [`net.crawlora:crawlora-ebay:0.1.2`](java/README.md)
 - PHP: [`crawlora/ebay`](php/README.md)
 
 For installation and runnable examples, use the README for your language. See the [API endpoint and parameter reference](docs/usage.md) for shared operation details.

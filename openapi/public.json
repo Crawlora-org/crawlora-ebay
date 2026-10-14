@@ -20,27 +20,33 @@
     "ebay.Item": {
       "properties": {
         "availability": {
+          "description": "Stock status shown on the listing, such as `In Stock`.",
           "example": "In Stock",
           "type": "string"
         },
         "condition": {
+          "description": "Item condition as listed, such as `Pre-Owned`.",
           "example": "Pre-Owned",
           "type": "string"
         },
         "description": {
+          "description": "Seller's description of the item.",
           "type": "string"
         },
         "images": {
+          "description": "URLs of the listing photos.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "item_feedback_count": {
+          "description": "Number of buyer feedback entries for this item.",
           "example": 80,
           "type": "integer"
         },
         "item_id": {
+          "description": "eBay item ID of the listing. Use it with the item endpoint.",
           "example": "196435705622",
           "type": "string"
         },
@@ -48,43 +54,53 @@
           "additionalProperties": {
             "type": "string"
           },
+          "description": "Item specifics table of the listing, mapping each label to its value.",
           "type": "object"
         },
         "link": {
+          "description": "URL of the listing on eBay.",
           "example": "https://www.ebay.com/itm/196435705622",
           "type": "string"
         },
         "location": {
+          "description": "Item location shown on the listing, such as `Canada`.",
           "example": "Canada",
           "type": "string"
         },
         "price": {
+          "description": "Item price as a number, in the listing's currency.",
           "example": 49.95,
           "type": "number"
         },
         "price_text": {
+          "description": "Price as shown on the listing, such as `US $49.95`.",
           "example": "US $49.95",
           "type": "string"
         },
         "rating": {
+          "description": "Average product star rating.",
           "example": 4.8,
           "type": "number"
         },
         "rating_count": {
+          "description": "Number of product ratings.",
           "example": 12,
           "type": "integer"
         },
         "sale_status": {
+          "description": "Approximate converted price or bid count shown on the listing, when present.",
           "example": "Available",
           "type": "string"
         },
         "seller_categories": {
+          "description": "Names of the categories in the seller's store.",
           "items": {
             "type": "string"
           },
           "type": "array"
         },
         "seller_description": {
+          "description": "Seller's own description of their store.",
           "type": "string"
         },
         "seller_detailed_ratings": {
@@ -92,53 +108,66 @@
             "format": "float64",
             "type": "number"
           },
+          "description": "Seller's detailed ratings, mapping each criterion such as `Communication` to its average score.",
           "type": "object"
         },
         "seller_feedback_score": {
+          "description": "Seller's feedback score.",
           "example": 2067,
           "type": "integer"
         },
         "seller_followers": {
+          "description": "Number of eBay users following the seller.",
           "example": 13000,
           "type": "integer"
         },
         "seller_items_sold": {
+          "description": "Number of items the seller has sold.",
           "example": 814000,
           "type": "integer"
         },
         "seller_link": {
+          "description": "URL of the seller's eBay profile.",
           "example": "https://www.ebay.com/usr/soonerfan1949",
           "type": "string"
         },
         "seller_logo_url": {
+          "description": "URL of the seller's store logo.",
           "example": "https://i.ebayimg.com/images/g/4yUAAOSwsV9ns4CY/s-l140.jpg",
           "type": "string"
         },
         "seller_member_since": {
+          "description": "When the seller joined eBay, such as `Mar 1998`.",
           "example": "Mar 1998",
           "type": "string"
         },
         "seller_name": {
+          "description": "eBay username of the seller.",
           "example": "soonerfan1949",
           "type": "string"
         },
         "seller_positive_feedback": {
+          "description": "Share of the seller's feedback that is positive, as a percentage.",
           "example": 100,
           "type": "number"
         },
         "seller_store_name": {
+          "description": "Name of the seller's eBay store.",
           "example": "POLOBLADE COLLECTIBLES",
           "type": "string"
         },
         "seller_total_feedback_count": {
+          "description": "Total number of feedback entries the seller has received.",
           "example": 291075,
           "type": "integer"
         },
         "shipping": {
+          "description": "Shipping cost as shown on the listing, such as `+$4.95 shipping`.",
           "example": "+$4.95 shipping",
           "type": "string"
         },
         "title": {
+          "description": "Listing title as shown on the item page.",
           "example": "1983 TOPPS BASEBALL - 1952 TOPPS REPRINTS #311 MICKEY MANTLE",
           "type": "string"
         }
@@ -499,42 +528,52 @@
     "ebay.SearchItem": {
       "properties": {
         "bid_count": {
+          "description": "Number of bids on an auction listing.",
           "example": 9,
           "type": "integer"
         },
         "caption": {
+          "description": "Caption line shown on the search card.",
           "example": "caption",
           "type": "string"
         },
         "image": {
+          "description": "URL of the listing's thumbnail image.",
           "example": "https://i.ebayimg.com/images/g/b6wAAOSwLRdmZeHS/s-l500.jpg",
           "type": "string"
         },
         "is_authenticity_guaranteed": {
+          "description": "Whether the listing carries eBay's Authenticity Guarantee.",
           "example": false,
           "type": "boolean"
         },
         "item_id": {
+          "description": "eBay item ID of the listing. Use it with the item endpoint.",
           "example": "196435705622",
           "type": "string"
         },
         "link": {
+          "description": "URL of the listing on eBay.",
           "example": "https://www.ebay.com/itm/196435705622",
           "type": "string"
         },
         "location": {
+          "description": "Item location shown on the search card, such as `Canada`.",
           "example": "Canada",
           "type": "string"
         },
         "logistic": {
+          "description": "Shipping information shown on the search card, such as `+$4.95 shipping`.",
           "example": "+$4.95 shipping",
           "type": "string"
         },
         "offer_note": {
+          "description": "Purchase option label shown on the card, such as `Buy It Now`.",
           "example": "Buy It Now",
           "type": "string"
         },
         "price": {
+          "description": "Listing price as a number. Set only when the card shows a single price, not a range.",
           "example": 49.95,
           "type": "number"
         },
@@ -544,34 +583,42 @@
           "type": "number"
         },
         "price_to": {
+          "description": "Upper end of the price when the card shows a price range.",
           "example": 20,
           "type": "number"
         },
         "rating": {
+          "description": "Average product star rating.",
           "example": 5,
           "type": "number"
         },
         "rating_num": {
+          "description": "Number of product ratings.",
           "example": 1,
           "type": "integer"
         },
         "seller": {
+          "description": "Seller name with feedback count and positive percentage, as shown on the card, such as `soonerfan1949 (998) 100%`.",
           "example": "soonerfan1949 (998) 100%",
           "type": "string"
         },
         "sold_count": {
+          "description": "Number of units sold, as shown on the card.",
           "example": 178,
           "type": "integer"
         },
         "sub_title": {
+          "description": "Subtitle line shown on the card, such as `Pre-Owned`.",
           "example": "Pre-Owned",
           "type": "string"
         },
         "title": {
+          "description": "Listing title as shown on the search card.",
           "example": "1983 TOPPS BASEBALL - 1952 TOPPS REPRINTS #311 MICKEY MANTLE",
           "type": "string"
         },
         "watcher_count": {
+          "description": "Number of users watching the listing.",
           "example": 26,
           "type": "integer"
         }
@@ -620,20 +667,24 @@
     "ebay.SearchResp": {
       "properties": {
         "has_more": {
+          "description": "Whether more results are available on later pages.",
           "example": true,
           "type": "boolean"
         },
         "page": {
+          "description": "Page number returned.",
           "example": 1,
           "type": "integer"
         },
         "result": {
+          "description": "Listings on this page.",
           "items": {
             "$ref": "#/definitions/ebay.SearchItem"
           },
           "type": "array"
         },
         "total": {
+          "description": "Total number of results eBay reports for the search.",
           "example": 120,
           "type": "integer"
         }
@@ -643,6 +694,7 @@
     "ebay.Seller": {
       "properties": {
         "description": {
+          "description": "Seller's description of their store.",
           "example": "Vintage sports card seller",
           "type": "string"
         },
@@ -651,13 +703,16 @@
             "format": "float64",
             "type": "number"
           },
+          "description": "Seller's detailed ratings, mapping each criterion such as `Communication` to its average score.",
           "type": "object"
         },
         "display_name": {
+          "description": "Seller's display name on eBay.",
           "example": "soonerfan1949",
           "type": "string"
         },
         "feedback_count": {
+          "description": "Number of feedback entries the seller has received.",
           "example": 2067,
           "type": "integer"
         },
@@ -666,41 +721,51 @@
             "format": "int64",
             "type": "integer"
           },
+          "description": "Number of feedback entries by rating type, such as `positive`.",
           "type": "object"
         },
         "followers": {
+          "description": "Number of eBay users following the seller.",
           "example": 52,
           "type": "integer"
         },
         "items_sold": {
+          "description": "Number of items the seller has sold.",
           "example": 970,
           "type": "integer"
         },
         "location": {
+          "description": "Seller's location as shown on their profile.",
           "example": "United States",
           "type": "string"
         },
         "member_since": {
+          "description": "When the seller joined eBay, such as `Jan 09, 2000`.",
           "example": "Jan 09, 2000",
           "type": "string"
         },
         "positive_feedback_percent": {
+          "description": "Share of the seller's feedback that is positive, as a percentage.",
           "example": 100,
           "type": "number"
         },
         "profile_url": {
+          "description": "URL of the seller's eBay profile.",
           "example": "https://www.ebay.com/usr/soonerfan1949",
           "type": "string"
         },
         "seller": {
+          "description": "eBay username of the seller.",
           "example": "soonerfan1949",
           "type": "string"
         },
         "store_name": {
+          "description": "Name of the seller's eBay store.",
           "example": "Sooner Fan Cards",
           "type": "string"
         },
         "store_url": {
+          "description": "URL of the seller's eBay store.",
           "example": "https://www.ebay.com/str/example",
           "type": "string"
         }
@@ -710,63 +775,78 @@
     "ebay.SellerAbout": {
       "properties": {
         "banner_url": {
+          "description": "URL of the seller's store banner image.",
           "example": "https://i.ebayimg.com/images/g/2lEAAOSwR4Bjr23U/s-l1600.png",
           "type": "string"
         },
         "categories": {
+          "description": "Categories in the seller's store, each with its subcategories.",
           "items": {
             "$ref": "#/definitions/ebay.SellerAboutCategory"
           },
           "type": "array"
         },
         "contact_seller_url": {
+          "description": "URL of eBay's contact page for the seller.",
           "example": "https://contact.ebay.com/ws/eBayISAPI.dll?ShowSellerFAQ&iid=-1&requested=poloblade",
           "type": "string"
         },
         "description": {
+          "description": "Seller's description of their store.",
           "type": "string"
         },
         "followers": {
+          "description": "Number of eBay users following the seller.",
           "example": 13000,
           "type": "integer"
         },
         "items_sold": {
+          "description": "Number of items the seller has sold.",
           "example": 814000,
           "type": "integer"
         },
         "location": {
+          "description": "Seller's location as shown on the About page.",
           "example": "United States",
           "type": "string"
         },
         "logo_url": {
+          "description": "URL of the seller's store logo.",
           "example": "https://i.ebayimg.com/images/g/4yUAAOSwsV9ns4CY/s-l140.jpg",
           "type": "string"
         },
         "member_since": {
+          "description": "When the seller joined eBay, such as `Jan 09, 2000`.",
           "example": "Jan 09, 2000",
           "type": "string"
         },
         "positive_feedback_percent": {
+          "description": "Share of the seller's feedback that is positive, as a percentage.",
           "example": 99.9,
           "type": "number"
         },
         "seller": {
+          "description": "eBay username of the seller.",
           "example": "poloblade",
           "type": "string"
         },
         "store_name": {
+          "description": "Name of the seller's eBay store.",
           "example": "POLOBLADE COLLECTIBLES",
           "type": "string"
         },
         "store_url": {
+          "description": "URL of the seller's eBay store.",
           "example": "https://www.ebay.com/str/poloblade",
           "type": "string"
         },
         "top_rated_seller": {
+          "description": "Whether the seller holds eBay's Top Rated Seller status.",
           "example": true,
           "type": "boolean"
         },
         "top_rated_seller_summary": {
+          "description": "Text eBay shows to describe the seller's Top Rated status.",
           "type": "string"
         }
       },
@@ -775,16 +855,19 @@
     "ebay.SellerAboutCategory": {
       "properties": {
         "name": {
+          "description": "Category name, such as `Coins & Paper Money`.",
           "example": "Coins & Paper Money",
           "type": "string"
         },
         "subcategories": {
+          "description": "Subcategories listed under this category.",
           "items": {
             "$ref": "#/definitions/ebay.SellerAboutSubcategory"
           },
           "type": "array"
         },
         "url": {
+          "description": "URL of this category within the seller's store.",
           "example": "https://www.ebay.com/str/poloblade/Coins-Paper-Money/_i.html?_sacat=11116",
           "type": "string"
         }
@@ -794,10 +877,12 @@
     "ebay.SellerAboutSubcategory": {
       "properties": {
         "name": {
+          "description": "Subcategory name, such as `Coins: US`.",
           "example": "Coins: US",
           "type": "string"
         },
         "url": {
+          "description": "URL of this subcategory within the seller's store.",
           "example": "https://www.ebay.com/str/poloblade/Coins-US/_i.html?_sacat=253",
           "type": "string"
         }
@@ -807,6 +892,7 @@
     "ebay.SellerFeedback": {
       "properties": {
         "description": {
+          "description": "Seller's description of their store.",
           "type": "string"
         },
         "detailed_seller_ratings": {
@@ -814,21 +900,26 @@
             "format": "float64",
             "type": "number"
           },
+          "description": "Seller's detailed ratings, mapping each criterion such as `Communication` to its average score.",
           "type": "object"
         },
         "followers": {
+          "description": "Number of eBay users following the seller.",
           "example": 13000,
           "type": "integer"
         },
         "has_more": {
+          "description": "Whether more feedback pages are available.",
           "example": true,
           "type": "boolean"
         },
         "items_sold": {
+          "description": "Number of items the seller has sold.",
           "example": 814000,
           "type": "integer"
         },
         "next_page": {
+          "description": "Page number to request next.",
           "example": 2,
           "type": "integer"
         },
@@ -837,39 +928,48 @@
             "format": "int64",
             "type": "integer"
           },
+          "description": "Number of feedback entries by rating type, such as `positive`.",
           "type": "object"
         },
         "page": {
+          "description": "Feedback page number returned.",
           "example": 1,
           "type": "integer"
         },
         "per_page": {
+          "description": "Number of reviews per page.",
           "example": 48,
           "type": "integer"
         },
         "positive_feedback_percent": {
+          "description": "Share of the seller's feedback that is positive, as a percentage.",
           "example": 99.9,
           "type": "number"
         },
         "reviews": {
+          "description": "Buyer feedback entries on this page.",
           "items": {
             "$ref": "#/definitions/ebay.SellerReview"
           },
           "type": "array"
         },
         "seller": {
+          "description": "eBay username of the seller.",
           "example": "poloblade",
           "type": "string"
         },
         "store_name": {
+          "description": "Name of the seller's eBay store.",
           "example": "POLOBLADE COLLECTIBLES",
           "type": "string"
         },
         "store_url": {
+          "description": "URL of the seller's eBay store.",
           "example": "https://www.ebay.com/str/poloblade",
           "type": "string"
         },
         "total_feedback_count": {
+          "description": "Total number of feedback entries the seller has received.",
           "example": 291071,
           "type": "integer"
         }
@@ -879,25 +979,31 @@
     "ebay.SellerReview": {
       "properties": {
         "buyer": {
+          "description": "Buyer's username, partly masked, such as `w***n`.",
           "example": "w***n",
           "type": "string"
         },
         "buyer_feedback": {
+          "description": "Feedback score of the buyer who left the review.",
           "example": 3426,
           "type": "integer"
         },
         "comment": {
+          "description": "Feedback comment left by the buyer.",
           "type": "string"
         },
         "period": {
+          "description": "When the feedback was left, as eBay words it, such as `Past 6 months`.",
           "example": "Past 6 months",
           "type": "string"
         },
         "rating": {
+          "description": "Rating the buyer gave: `positive`, `neutral` or `negative`.",
           "example": "positive",
           "type": "string"
         },
         "verified_purchase": {
+          "description": "Whether eBay marks the feedback as coming from a verified purchase.",
           "example": true,
           "type": "boolean"
         }
@@ -1082,7 +1188,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized details for a public eBay item listing.",
+        "description": "Returns the details of one eBay listing by `item_id`: title, link, images, price and price text, condition, availability, item specifics, description, location and shipping. It also carries the seller's name, store, feedback score, followers and items sold, along with the listing's rating and rating count.",
         "operationId": "ebay-item",
         "parameters": [
           {
@@ -1151,7 +1257,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns currently live and upcoming eBay Live streams for a category channel.",
+        "description": "Lists live and upcoming eBay Live streams for one category channel, set with `category` (default `explore`; other values are channel ids such as `IPqZx79LNuwFcSVt` for Sports Singles). Each stream has its title, state, start time, watch count, hosts, tags and preview media. Host feedback is not included. Page on with `next_request_number` and `session_id`, passed back as `request_number` and `session_id`.",
         "operationId": "ebay-live-streams",
         "parameters": [
           {
@@ -1243,7 +1349,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized summaries for multiple eBay Live streams/events in one call, up to 9 ids per request.",
+        "description": "Returns summaries for several eBay Live streams in one call. `ids` is required and takes up to 9 stream ids, comma-separated or repeated. Each stream has its title, state, watch count, hosts, tags and preview media, without the per-host feedback summary. Ids that do not resolve are silently omitted, and the order may differ from the request.",
         "operationId": "ebay-live-streams-batch",
         "parameters": [
           {
@@ -1306,7 +1412,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized detail for a single eBay Live stream/event, including each host's feedback summary for the last 365 days.",
+        "description": "Returns one eBay Live stream or event by `id`, taken from the `streams[].id` of the stream list. The response has title, description, state, start and end times, viewer, watch and like counts, tags, channels and the live, preview and replay URLs. Each host carries a 365-day feedback summary and four average ratings. An unknown id returns `404`.",
         "operationId": "ebay-live-stream",
         "parameters": [
           {
@@ -1375,7 +1481,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns the currently featured/auction items for an eBay Live stream, including live bidding state.",
+        "description": "Lists the items currently featured in an eBay Live stream, identified by the required event `id`. Each item has its listing id, title, price and currency, bid count, sale type, leader and winner usernames, and `auction_status` (`READY`, `LIVE` or `ENDED`). A stream with no featured items, or an unknown id, returns an empty `items` array.",
         "operationId": "ebay-live-stream-items",
         "parameters": [
           {
@@ -1438,7 +1544,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized eBay search results.",
+        "description": "Searches eBay listings by keyword from a JSON body, with page, page size (60, 120 or 240) and a listing-status filter (`active`, `sold`, `completed` or `sold_completed`). Each result has the item id, title, link, image, price or price range, bid count, seller and rating, location, shipping information, and sold and watcher counts.",
         "operationId": "ebay-search",
         "parameters": [
           {
@@ -1502,7 +1608,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized details for a public eBay seller profile.",
+        "description": "Returns the public profile of an eBay seller by the required `seller` username: display name, store name and URL, profile URL, description, location, member-since date, positive feedback percentage, feedback count, items sold, followers, and detailed seller ratings. Feedback details are included when eBay provides them.",
         "operationId": "ebay-seller",
         "parameters": [
           {
@@ -1571,7 +1677,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized seller about information from the public eBay store about tab, including seller stats, top-rated status, optional location/member-since fields, and cleaned store categories.",
+        "description": "Returns seller about information from the eBay store about tab, including seller stats, top-rated status, optional location/member-since fields, and cleaned store categories.",
         "operationId": "ebay-seller-about",
         "parameters": [
           {
@@ -1640,7 +1746,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized seller feedback summary, detailed ratings, and recent review cards from the public eBay seller feedback tab.",
+        "description": "Returns the feedback eBay shows for a seller, identified by the required `seller` username. The response has the total feedback count, positive feedback percentage, overall rating summary, detailed seller ratings, and review cards with buyer, comment, rating, period and verified-purchase flag. Page with `page` (default 1) and `per_page` (24, 48 or 72; default 48), using `has_more` and `next_page`.",
         "operationId": "ebay-seller-feedback",
         "parameters": [
           {
@@ -1728,7 +1834,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Returns normalized listings from the public eBay seller shop tab, with pagination backed by the store odtRefresh response.",
+        "description": "Lists the items in an eBay seller's shop, identified by the required `seller` username, one page at a time with `page` (default 1). Each result has its item id, title, link, image, price or price range, shipping note, location, bid count and watcher count. The response gives the `total` and a `has_more` flag.",
         "operationId": "ebay-seller-shop",
         "parameters": [
           {

@@ -8,7 +8,7 @@ The official Java client for Crawlora's hosted eBay API. It exposes 10 endpoints
 <dependency>
   <groupId>net.crawlora</groupId>
   <artifactId>crawlora-ebay</artifactId>
-  <version>0.1.1</version>
+  <version>0.1.2</version>
 </dependency>
 ```
 
