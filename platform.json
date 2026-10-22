@@ -35,6 +35,8 @@
   ],
   "repository": "https://github.com/Crawlora-org/crawlora-ebay",
   "ruby_gem_name": "crawlora-ebay",
+  "rust_crate_name": "crawlora-ebay",
+  "rust_module_name": "crawlora_ebay",
   "source_contract_sha256": "edf94a318d422a94556084a811322eca2f95fd990cb37ad55abc6475c46b633a",
   "version": "0.1.2"
 }
